@@ -30,7 +30,7 @@ jobs:
       run: npm run prod
       
     - name: CNAME
-      run: echo "privacyfed.github.io/doc_extrafield" > ./build_production/CNAME
+      run: echo "privacyfed.github.io/doc_payment" > ./build_production/CNAME
 
     - name: gh-pages
       uses: JamesIves/github-pages-deploy-action@v4.4.1

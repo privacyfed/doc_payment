@@ -1,4 +1,7 @@
-{
+{    
+    "name": "privacyfed/doc_payment",
+    "description": "Modulo Payment",
+    "license": "MIT",
     "require": {
         "tightenco/jigsaw": "^1.6",
         "samdark/sitemap": "^2.2.1"

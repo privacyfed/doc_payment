@@ -7,23 +7,36 @@ $moduleName = 'Payment';
 return [
     'baseUrl' => '',
     'production' => false,
+<<<<<<< HEAD
     'siteName' => 'Modulo '.$moduleName,
     'siteDescription' => 'Modulo '.$moduleName,
+=======
+    'siteName' => 'Modulo Media',
+    'siteDescription' => 'Modulo Media',
+>>>>>>> b15ad18 (.)
     'lang' => 'it',
 
     'collections' => [
         'posts' => [
             'path' => function ($page) {
+<<<<<<< HEAD
                 //return $page->lang.'/posts/'.Str::slug($page->getFilename());
                 //return 'posts/' . ($page->featured ? 'featured/' : '') . Str::slug($page->getFilename());
 
                 return 'posts/'.Str::slug($page->getFilename());
+=======
+                return $page->lang.'/posts/'.Str::slug($page->getFilename());
+>>>>>>> b15ad18 (.)
             },
         ],
         'docs' => [
             'path' => function ($page) {
+<<<<<<< HEAD
                 //return $page->lang.'/docs/'.Str::slug($page->getFilename());
                 return 'docs/'.Str::slug($page->getFilename());
+=======
+                return $page->lang.'/docs/'.Str::slug($page->getFilename());
+>>>>>>> b15ad18 (.)
             },
         ],
     ],
@@ -50,6 +63,7 @@ return [
         }
     },/*
     'url' => function ($page, $path) {
+<<<<<<< HEAD
         return Str::startsWith($path, 'http') ? $path : '/' . trimPath($path);
     },
     */
@@ -63,5 +77,17 @@ return [
 
     'children' => function ($page, $docs) {
         return $docs->where('parent_id', $page->id);
+=======
+        if (Str::startsWith($path, 'http')) {
+            return $path;
+        }
+        // return Str::startsWith($path, 'http') ? $path : '/' . trimPath($path);
+        return url('/'.$page->lang.'/'.trimPath($path));
+    },
+
+    'children' => function ($page, $docs) {
+        return $docs->where('parent_id', $page->id);
+    // return [];
+>>>>>>> b15ad18 (.)
     },
 ];
